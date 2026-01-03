@@ -3,8 +3,8 @@
 namespace GamerHouse\Controllers;
 
 class HomeController {
-    public function index()
+    public function index():void
     {
-        echo "Bienvenue ! Autoload fonctionne 🚀";
+        require dirname(__DIR__, 2) . '/src/views/Accueil.php';
     }
 }
