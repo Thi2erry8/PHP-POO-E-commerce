@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-/* use GamerHouse\Controllers\HomeController;
+use App\App;
 
-$controller = new HomeController();
-$controller->index(); */
+$app = new App(dirname(__DIR__));
+$app->run();
+
 ?>
