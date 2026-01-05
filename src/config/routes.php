@@ -13,7 +13,7 @@
         'handler' => [HomeController::class, 'index']
     ],
     [
-        'method'=> 'POST',
+        'method'=> 'GET',
         'path' => $base . '/login',
         'handler' => [LoginController::class, 'login']
     ],
