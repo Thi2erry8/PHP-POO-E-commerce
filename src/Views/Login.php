@@ -1,6 +1,7 @@
 <h1>Login</h1>
 
 <form>
-    <input type="text" placeholder="Email">
-    <input type="password" placeholder="Mot de passe">
+    <input type="text" placeholder="Nom">
+    <input type="text" placeholder="Prenom">
+    <input type="mail" placeholder="Mot de passe">
 </form>
