@@ -22,5 +22,10 @@
         'path' => $base . '/product',
         'handler' => [ProductController::class, 'index']
     ],
+    [
+        'method' => 'POST',
+        'path' => '/login',
+        'handler' => [LoginController::class, 'login']
+    ],
 
 ];
