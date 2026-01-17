@@ -3,10 +3,11 @@
  namespace GamerHouse\Repository;
 
  use GamerHouse\config\Databases;
+ use GamerHouse\Entity\User;
  use PDO;
 
  class UserRepository{
-    public function findByEmail(string $email): ?array
+    public function findByEmail(string $email): ?User
     {
         $pdo = Databases::getConnection();
 
@@ -16,8 +17,17 @@
 
         $stmt->execute(['email' => $email]);
 
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $user ?: null;
+       if (!$data) {
+         return null;
+       }
+
+       return new User(
+        (int) $data['id'],
+        $data['email'],
+        $data['password'],
+        $data['role']
+       );
     }
  }

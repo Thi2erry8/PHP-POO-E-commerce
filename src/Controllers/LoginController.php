@@ -12,7 +12,7 @@
              $this->handleLogin();
              return;
         }
-        require dirname(__DIR__, 2) . '/src/views/Login.php';
+        require __DIR__ . '/src/Views/Login.php';
     }
     
     private function handleLogin(): void{
@@ -22,15 +22,16 @@
         $userRepo = new UserRepository();
         $user = $userRepo->findByEmail($email);
 
-        if(!$user || !password_verify($password, $user['password'])){
+        if(!$user || !password_verify($password, $user->getPassword())){
             $error = "Email ou mot de passe incorrect";
-                    require dirname(__DIR__, 2) . '/src/views/Login.php';
+                    require __DIR__ . '/src/Views/Login.php';
                     return;
         }
 
         $_SESSION['user'] = [
-            'id' => $user['id'],
-            'email' => $user['email']
+            'id' => $user->getId(),
+            'email' => $user->getEmail(),
+            'role' => $user->getRole()
         ];
 
         header('Localtion:' . BASE_URL . '/dashboard');
