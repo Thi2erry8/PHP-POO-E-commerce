@@ -3,6 +3,7 @@
   use GamerHouse\Controllers\HomeController;
   use GamerHouse\Controllers\ProductController;
   use GamerHouse\Controllers\LoginController;
+  use GamerHouse\Controllers\RegisterController;
  
   $base = '/PHP-POO-E-commerce/public';
  
@@ -24,8 +25,18 @@
     ],
     [
         'method' => 'POST',
-        'path' => '/login',
+        'path' => $base . '/login',
         'handler' => [LoginController::class, 'login']
+    ],
+    [
+        'method' => 'GET',
+        'path' => '/register',
+        'handler' => [RegisterController::class, 'register']
+    ],
+    [
+        'method' => 'POST',
+        'path' => '/register',
+        'handler' => [RegisterController::class, 'register']
     ],
 
 ];
