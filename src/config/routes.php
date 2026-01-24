@@ -30,12 +30,12 @@
     ],
     [
         'method' => 'GET',
-        'path' => '/register',
+        'path' => $base . '/register',
         'handler' => [RegisterController::class, 'register']
     ],
     [
         'method' => 'POST',
-        'path' => '/register',
+        'path' => $base . '/register',
         'handler' => [RegisterController::class, 'register']
     ],
 
