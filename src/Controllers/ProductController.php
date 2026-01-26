@@ -6,6 +6,6 @@ class ProductController
 {
     public function index(): void
     {
-        require dirname(__DIR__, 2) . '/src/views/produit.php';
+        require dirname(__DIR__, 2) . '/src/views/product.php';
     }
 }
